@@ -1,17 +1,31 @@
-import React, { useState } from 'react';
-import { OWNER_INFO, PRODUCTION_FAQ } from '../data/portfolioData';
-import { validateContactForm, ContactFormData, FormErrors } from '../utils/portfolio';
-import { Copy, CheckCircle2, ChevronDown, ChevronUp, Mail, Send, MapPin, Calendar, Clock } from 'lucide-react';
+import React, { useState } from "react";
+import { OWNER_INFO, PRODUCTION_FAQ } from "../data/portfolioData";
+import {
+  validateContactForm,
+  ContactFormData,
+  FormErrors,
+} from "../utils/portfolio";
+import {
+  Copy,
+  CheckCircle2,
+  ChevronDown,
+  ChevronUp,
+  Mail,
+  Send,
+  MapPin,
+  Calendar,
+  Clock,
+} from "lucide-react";
 
 export const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState<ContactFormData>({
-    name: '',
-    email: '',
-    company: '',
-    projectType: 'Commercial Directing',
-    timeline: 'Q3 2026',
-    budgetRange: '$50,000 - $100,000',
-    message: '',
+    name: "",
+    email: "",
+    company: "",
+    projectType: "Commercial Directing",
+    timeline: "Q3 2026",
+    budgetRange: "$50,000 - $100,000",
+    message: "",
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
@@ -21,7 +35,7 @@ export const ContactPage: React.FC = () => {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(0);
 
   const handleCopyEmail = () => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       navigator.clipboard.writeText(OWNER_INFO.email);
       setCopiedEmail(true);
       setTimeout(() => setCopiedEmail(false), 2500);
@@ -29,7 +43,9 @@ export const ContactPage: React.FC = () => {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -57,13 +73,13 @@ export const ContactPage: React.FC = () => {
 
   const handleReset = () => {
     setFormData({
-      name: '',
-      email: '',
-      company: '',
-      projectType: 'Commercial Directing',
-      timeline: 'Q3 2026',
-      budgetRange: '$50,000 - $100,000',
-      message: '',
+      name: "",
+      email: "",
+      company: "",
+      projectType: "Commercial Directing",
+      timeline: "Q3 2026",
+      budgetRange: "$50,000 - $100,000",
+      message: "",
     });
     setErrors({});
     setIsSubmitted(false);
@@ -122,11 +138,13 @@ export const ContactPage: React.FC = () => {
             <div className="p-8 bg-[#1C1C1A] border border-[#262624] space-y-4 text-xs font-mono">
               <div className="flex items-center gap-3 text-[#A3A3A0]">
                 <MapPin className="w-4 h-4 text-[#FAFAFA]" />
-                <span>Munich, Germany · European Union</span>
+                <span>BARCELONA, Spain · European Union</span>
               </div>
               <div className="flex items-center gap-3 text-[#A3A3A0]">
                 <Calendar className="w-4 h-4 text-[#FAFAFA]" />
-                <span className="text-[#FAFAFA]">Booking: Q3 / Q4 2026 Production</span>
+                <span className="text-[#FAFAFA]">
+                  Booking: Q3 / Q4 2026 Production
+                </span>
               </div>
               <div className="flex items-center gap-3 text-[#A3A3A0]">
                 <Clock className="w-4 h-4 text-[#FAFAFA]" />
@@ -141,12 +159,22 @@ export const ContactPage: React.FC = () => {
               </div>
               <div className="text-xs space-y-3 text-[#A3A3A0] leading-relaxed">
                 <div>
-                  <strong className="text-[#FAFAFA] block">Commercials Europe & UK</strong>
-                  <span>Independent representation via Munich HQ. Direct inquiries welcomed.</span>
+                  <strong className="text-[#FAFAFA] block">
+                    Commercials Europe & UK
+                  </strong>
+                  <span>
+                    Independent representation via BARCELONA HQ. Direct
+                    inquiries welcomed.
+                  </span>
                 </div>
                 <div>
-                  <strong className="text-[#FAFAFA] block">North America & Asia</strong>
-                  <span>Available on production-company contract or direct agency engagement.</span>
+                  <strong className="text-[#FAFAFA] block">
+                    North America & Asia
+                  </strong>
+                  <span>
+                    Available on production-company contract or direct agency
+                    engagement.
+                  </span>
                 </div>
               </div>
             </div>
@@ -160,9 +188,13 @@ export const ContactPage: React.FC = () => {
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-bold text-[#FAFAFA]">Inquiry Received</h3>
+                  <h3 className="text-2xl font-bold text-[#FAFAFA]">
+                    Inquiry Received
+                  </h3>
                   <p className="text-sm text-[#A3A3A0] max-w-md mx-auto">
-                    Thank you, {formData.name}. Your project brief has been logged. Amir will review the parameters and follow up within 24 hours.
+                    Thank you, {formData.name}. Your project brief has been
+                    logged. Xaniar will review the parameters and follow up
+                    within 24 hours.
                   </p>
                 </div>
                 <button
@@ -178,7 +210,10 @@ export const ContactPage: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {/* Name */}
                   <div className="space-y-1.5">
-                    <label htmlFor="name" className="block text-xs font-mono uppercase text-[#A3A3A0]">
+                    <label
+                      htmlFor="name"
+                      className="block text-xs font-mono uppercase text-[#A3A3A0]"
+                    >
                       Your Name *
                     </label>
                     <input
@@ -189,15 +224,22 @@ export const ContactPage: React.FC = () => {
                       onChange={handleChange}
                       placeholder="e.g. Sarah Lindqvist"
                       className={`w-full px-4 py-3 bg-[#141414] border text-sm text-[#FAFAFA] focus:outline-none ${
-                        errors.name ? 'border-red-500' : 'border-[#333330] focus:border-[#FAFAFA]'
+                        errors.name
+                          ? "border-red-500"
+                          : "border-[#333330] focus:border-[#FAFAFA]"
                       }`}
                     />
-                    {errors.name && <p className="text-xs text-red-400 mt-1">{errors.name}</p>}
+                    {errors.name && (
+                      <p className="text-xs text-red-400 mt-1">{errors.name}</p>
+                    )}
                   </div>
 
                   {/* Email */}
                   <div className="space-y-1.5">
-                    <label htmlFor="email" className="block text-xs font-mono uppercase text-[#A3A3A0]">
+                    <label
+                      htmlFor="email"
+                      className="block text-xs font-mono uppercase text-[#A3A3A0]"
+                    >
                       Work Email *
                     </label>
                     <input
@@ -208,17 +250,26 @@ export const ContactPage: React.FC = () => {
                       onChange={handleChange}
                       placeholder="e.g. sarah@agency.com"
                       className={`w-full px-4 py-3 bg-[#141414] border text-sm text-[#FAFAFA] focus:outline-none ${
-                        errors.email ? 'border-red-500' : 'border-[#333330] focus:border-[#FAFAFA]'
+                        errors.email
+                          ? "border-red-500"
+                          : "border-[#333330] focus:border-[#FAFAFA]"
                       }`}
                     />
-                    {errors.email && <p className="text-xs text-red-400 mt-1">{errors.email}</p>}
+                    {errors.email && (
+                      <p className="text-xs text-red-400 mt-1">
+                        {errors.email}
+                      </p>
+                    )}
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {/* Company / Brand */}
                   <div className="space-y-1.5">
-                    <label htmlFor="company" className="block text-xs font-mono uppercase text-[#A3A3A0]">
+                    <label
+                      htmlFor="company"
+                      className="block text-xs font-mono uppercase text-[#A3A3A0]"
+                    >
                       Agency / Brand / Studio
                     </label>
                     <input
@@ -234,7 +285,10 @@ export const ContactPage: React.FC = () => {
 
                   {/* Project Type */}
                   <div className="space-y-1.5">
-                    <label htmlFor="projectType" className="block text-xs font-mono uppercase text-[#A3A3A0]">
+                    <label
+                      htmlFor="projectType"
+                      className="block text-xs font-mono uppercase text-[#A3A3A0]"
+                    >
                       Primary Discipline *
                     </label>
                     <select
@@ -244,12 +298,22 @@ export const ContactPage: React.FC = () => {
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-[#141414] border border-[#333330] text-sm text-[#FAFAFA] focus:outline-none focus:border-[#FAFAFA]"
                     >
-                      <option value="Commercial Directing">Commercial Directing</option>
-                      <option value="Motion Design Lead">Motion Design Lead</option>
-                      <option value="3D Motion & Simulation">3D Motion & Simulation</option>
-                      <option value="Creative Producing">Creative Producing</option>
+                      <option value="Commercial Directing">
+                        Commercial Directing
+                      </option>
+                      <option value="Motion Design Lead">
+                        Motion Design Lead
+                      </option>
+                      <option value="3D Motion & Simulation">
+                        3D Motion & Simulation
+                      </option>
+                      <option value="Creative Producing">
+                        Creative Producing
+                      </option>
                       <option value="Art Direction">Art Direction</option>
-                      <option value="Real-Time Cinematics">Real-Time Cinematics (Unreal 5)</option>
+                      <option value="Real-Time Cinematics">
+                        Real-Time Cinematics (Unreal 5)
+                      </option>
                     </select>
                   </div>
                 </div>
@@ -257,7 +321,10 @@ export const ContactPage: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {/* Timeline */}
                   <div className="space-y-1.5">
-                    <label htmlFor="timeline" className="block text-xs font-mono uppercase text-[#A3A3A0]">
+                    <label
+                      htmlFor="timeline"
+                      className="block text-xs font-mono uppercase text-[#A3A3A0]"
+                    >
                       Target Delivery Window
                     </label>
                     <select
@@ -270,13 +337,18 @@ export const ContactPage: React.FC = () => {
                       <option value="Q3 2026">Q3 2026</option>
                       <option value="Q4 2026">Q4 2026</option>
                       <option value="Q1 2027">Q1 2027</option>
-                      <option value="Urgent / Short-Turnaround">Urgent / Short-Turnaround</option>
+                      <option value="Urgent / Short-Turnaround">
+                        Urgent / Short-Turnaround
+                      </option>
                     </select>
                   </div>
 
                   {/* Budget */}
                   <div className="space-y-1.5">
-                    <label htmlFor="budgetRange" className="block text-xs font-mono uppercase text-[#A3A3A0]">
+                    <label
+                      htmlFor="budgetRange"
+                      className="block text-xs font-mono uppercase text-[#A3A3A0]"
+                    >
                       Estimated Budget Range
                     </label>
                     <select
@@ -286,17 +358,28 @@ export const ContactPage: React.FC = () => {
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-[#141414] border border-[#333330] text-sm text-[#FAFAFA] focus:outline-none focus:border-[#FAFAFA]"
                     >
-                      <option value="$25,000 - $50,000">$25,000 – $50,000</option>
-                      <option value="$50,000 - $100,000">$50,000 – $100,000</option>
-                      <option value="$100,000 - $250,000">$100,000 – $250,000</option>
-                      <option value="$250,000+">$250,000+ (Turnkey Production)</option>
+                      <option value="$25,000 - $50,000">
+                        $25,000 – $50,000
+                      </option>
+                      <option value="$50,000 - $100,000">
+                        $50,000 – $100,000
+                      </option>
+                      <option value="$100,000 - $250,000">
+                        $100,000 – $250,000
+                      </option>
+                      <option value="$250,000+">
+                        $250,000+ (Turnkey Production)
+                      </option>
                     </select>
                   </div>
                 </div>
 
                 {/* Message */}
                 <div className="space-y-1.5">
-                  <label htmlFor="message" className="block text-xs font-mono uppercase text-[#A3A3A0]">
+                  <label
+                    htmlFor="message"
+                    className="block text-xs font-mono uppercase text-[#A3A3A0]"
+                  >
                     Project Details & Brief *
                   </label>
                   <textarea
@@ -307,10 +390,16 @@ export const ContactPage: React.FC = () => {
                     onChange={handleChange}
                     placeholder="Describe the campaign brief, desired visual tone, scope of deliverables, and reference links..."
                     className={`w-full px-4 py-3 bg-[#141414] border text-sm text-[#FAFAFA] focus:outline-none ${
-                      errors.message ? 'border-red-500' : 'border-[#333330] focus:border-[#FAFAFA]'
+                      errors.message
+                        ? "border-red-500"
+                        : "border-[#333330] focus:border-[#FAFAFA]"
                     }`}
                   />
-                  {errors.message && <p className="text-xs text-red-400 mt-1">{errors.message}</p>}
+                  {errors.message && (
+                    <p className="text-xs text-red-400 mt-1">
+                      {errors.message}
+                    </p>
+                  )}
                 </div>
 
                 <button
@@ -348,7 +437,11 @@ export const ContactPage: React.FC = () => {
                     className="w-full flex items-center justify-between text-left text-base md:text-lg font-bold text-[#FAFAFA] hover:text-[#A3A3A0] transition-colors"
                   >
                     <span>{faq.q}</span>
-                    {isOpen ? <ChevronUp className="w-5 h-5 shrink-0" /> : <ChevronDown className="w-5 h-5 shrink-0" />}
+                    {isOpen ? (
+                      <ChevronUp className="w-5 h-5 shrink-0" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 shrink-0" />
+                    )}
                   </button>
                   {isOpen && (
                     <p className="mt-4 text-xs md:text-sm text-[#A3A3A0] leading-relaxed max-w-3xl">

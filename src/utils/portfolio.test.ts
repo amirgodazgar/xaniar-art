@@ -31,7 +31,7 @@ const mockProjects: Project[] = [
     accentTone: "#e8e8e6",
     artDirectionNotes: ["Anamorphic glass", "Minimalist studio"],
     toolsUsed: ["Houdini", "Cinema 4D", "Redshift"],
-    credits: [{ role: "Director", name: "xaniar ghaderpanah" }],
+    credits: [{ role: "Director", name: "Xaniar Ghaderpanah" }],
     stills: [{ caption: "Aero light bar pass", ratio: "2.39:1" }],
   },
   {
@@ -54,7 +54,7 @@ const mockProjects: Project[] = [
     accentTone: "#ffffff",
     artDirectionNotes: ["Obsidian surfaces", "Subtle caustics"],
     toolsUsed: ["Unreal Engine 5", "Octane Render"],
-    credits: [{ role: "Lead Artist", name: "xaniar ghaderpanah" }],
+    credits: [{ role: "Lead Artist", name: "Xaniar Ghaderpanah" }],
     stills: [{ caption: "Phase crystallization", ratio: "16:9" }],
   },
 ];

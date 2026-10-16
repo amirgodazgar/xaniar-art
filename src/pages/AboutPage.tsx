@@ -23,12 +23,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
   const [downloadSuccess, setDownloadSuccess] = useState(false);
 
   const handleDownloadCV = () => {
-    // Generate text/markdown dossier of xaniar ghaderpanah's senior CV
-    const resumeText = `# xaniar ghaderpanah
+    // Generate text/markdown dossier of Xaniar Ghaderpanah's senior CV
+    const resumeText = `# Xaniar Ghaderpanah
 Creative Director · Commercial Director · Motion Design Lead
-Location: Munich, Germany & Global Remote
+Location: BARCELONA, Spain & Global Remote
 Email: ${OWNER_INFO.email}
-Web: https://amirgodazgar.design
+Web: https://xaniar.art
 
 ## SUMMARY
 Senior Creative Director and Motion Design Lead with 11+ years directing live-action commercial films, procedural 3D motion design, and high-impact brand identities for global leaders including Nike, Polestar, Sony PlayStation, Rimowa, and Audemars Piguet.
@@ -62,7 +62,10 @@ Senior Creative Director and Motion Design Lead with 11+ years directing live-ac
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.setAttribute("download", "Amir_Godazgar_Creative_Director_Resume.md");
+    link.setAttribute(
+      "download",
+      "Xaniar_Ghaderpanah_Creative_Director_Resume.md",
+    );
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -80,7 +83,7 @@ Senior Creative Director and Motion Design Lead with 11+ years directing live-ac
             PROFILE // ME
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#171717]">
-            About xaniar ghaderpanah
+            About Xaniar Ghaderpanah
           </h1>
         </div>
 
@@ -93,20 +96,24 @@ Senior Creative Director and Motion Design Lead with 11+ years directing live-ac
               </div>
               {/* Minimal SVG Graphic Portrait Motif */}
               <div className="my-auto text-center space-y-2">
-                <div className="w-24 h-24 mx-auto rounded-full border border-white/20 flex items-center justify-center">
-                  <span className="font-bold text-3xl font-mono text-[#FAFAFA]">
-                    AG
-                  </span>
+                <div className="w-60 h-60 mx-auto rounded-full border border-white/20 flex items-center justify-center">
+                  {/* <span className="font-bold text-3xl font-mono text-[#FAFAFA]"> */}
+                  <img
+                    className="h-full w-full rounded-full"
+                    src="https://media.licdn.com/dms/image/v2/D4D03AQFLFXNHG6OCLA/profile-displayphoto-scale_400_400/B4DZfkIJ1iH4As-/0/1751879032682?e=1793836800&v=beta&t=vHp8-OqNXoKGxdqqNorNvKLUHH7Kcaa-zu68h7pD9eQ"
+                    alt="Xaniar"
+                  />
+                  {/* </span> */}
                 </div>
-                <div className="text-sm font-mono text-[#A3A3A0]">
-                  xaniar ghaderpanah
+                <div className="text-base font-bold font-mono text-[#A3A3A0]">
+                  Xaniar Ghaderpanah
                 </div>
                 <div className="text-xs text-[#737373]">
-                  11+ YRS PRODUCTION LEAD
+                  6+ YRS PRODUCTION LEAD
                 </div>
               </div>
               <div className="flex items-center justify-between text-xs font-mono text-[#A3A3A0] border-t border-[#262624] pt-4">
-                <span>MUNICH · CET</span>
+                <span>BARCELONA · CET</span>
                 <span>GLOBAL MOBILITY</span>
               </div>
             </div>

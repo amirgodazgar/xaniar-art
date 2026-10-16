@@ -26,7 +26,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         <div className="flex flex-col space-y-8">
           {/* Subtle Metadata Kicker */}
           <div className="flex items-center gap-3 text-xs md:text-sm font-mono text-[#737373] tracking-widest uppercase">
-            <span>MUNICH & GLOBAL REMOTE</span>
+            <span>BARCELONA & GLOBAL REMOTE</span>
             <span aria-hidden="true">·</span>
             <span>DIRECTING & 3D MOTION</span>
             <span aria-hidden="true">·</span>
@@ -47,7 +47,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             <p className="text-lg md:text-xl text-[#737373] leading-relaxed font-normal">
               Senior portfolio of{" "}
               <strong className="text-[#171717] font-semibold">
-                xaniar ghaderpanah
+                Xaniar Ghaderpanah
               </strong>
               . Partnering with global brands, agencies, and cultural
               institutions as Commercial Director, Motion Design Lead, 3D Motion
@@ -136,11 +136,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             <VideoPlayer
               videoUrl="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4"
               aspectRatio="2.39:1"
-              title="xaniar ghaderpanah Showreel"
+              title="Xaniar Ghaderpanah Showreel"
               posterComponent={
                 <ProjectArtwork
                   projectId="polestar-aerolight"
-                  title="xaniar ghaderpanah Director Showreel"
+                  title="Xaniar Ghaderpanah Director Showreel"
                   aspectRatio="2.39:1"
                 />
               }

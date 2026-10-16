@@ -1,7 +1,14 @@
-import React from 'react';
-import { DISCIPLINES } from '../data/portfolioData';
-import { PageRoute } from '../utils/router';
-import { ArrowRight, CheckCircle2, Film, Box, Clapperboard, Compass } from 'lucide-react';
+import React from "react";
+import { DISCIPLINES } from "../data/portfolioData";
+import { PageRoute } from "../utils/router";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Film,
+  Box,
+  Clapperboard,
+  Compass,
+} from "lucide-react";
 
 interface ExpertisePageProps {
   onNavigate: (page: PageRoute, slug?: string | null) => void;
@@ -10,24 +17,24 @@ interface ExpertisePageProps {
 export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onNavigate }) => {
   const workflowStages = [
     {
-      num: '01',
-      title: 'Narrative Concept & Treatment',
-      desc: 'Formulating the conceptual spine, scriptwriting, visual treatment decks, and tone grammar before a single frame is rendered.',
+      num: "01",
+      title: "Narrative Concept & Treatment",
+      desc: "Formulating the conceptual spine, scriptwriting, visual treatment decks, and tone grammar before a single frame is rendered.",
     },
     {
-      num: '02',
-      title: 'Computational 3D R&D & Styleframes',
-      desc: 'Developing bespoke shaders, particle dynamics, physics simulations, and tactile lighting tests in Houdini, Cinema 4D, and Redshift.',
+      num: "02",
+      title: "Computational 3D R&D & Styleframes",
+      desc: "Developing bespoke shaders, particle dynamics, physics simulations, and tactile lighting tests in Houdini, Cinema 4D, and Redshift.",
     },
     {
-      num: '03',
-      title: 'Live-Action Directing & Virtual Production',
-      desc: 'Leading camera crews, directing talent, executing camera choreographies on anamorphic glass or inside Unreal Engine 5 virtual volumes.',
+      num: "03",
+      title: "Live-Action Directing & Virtual Production",
+      desc: "Leading camera crews, directing talent, executing camera choreographies on anamorphic glass or inside Unreal Engine 5 virtual volumes.",
     },
     {
-      num: '04',
-      title: 'Finishing, Sound & Master Delivery',
-      desc: 'Precision editorial pacing, spatial sound engineering, calibrated ACES color grading, and broadcast multi-format exports.',
+      num: "04",
+      title: "Finishing, Sound & Master Delivery",
+      desc: "Precision editorial pacing, spatial sound engineering, calibrated ACES color grading, and broadcast multi-format exports.",
     },
   ];
 
@@ -43,8 +50,9 @@ export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onNavigate }) => {
             Creative Expertise
           </h1>
           <p className="mt-4 max-w-3xl text-lg text-[#525252] leading-relaxed">
-            Bridging high-concept art direction with cutting-edge computational 3D systems 
-            and live-action commercial cinema. Operating across 7 specialized professional disciplines.
+            Bridging high-concept art direction with cutting-edge computational
+            3D systems and live-action commercial cinema. Operating across 7
+            specialized professional disciplines.
           </p>
         </div>
       </section>
@@ -68,7 +76,9 @@ export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onNavigate }) => {
                 </div>
                 <button
                   type="button"
-                  onClick={() => onNavigate('project', discipline.caseStudyHighlightId)}
+                  onClick={() =>
+                    onNavigate("project", discipline.caseStudyHighlightId)
+                  }
                   className="flex items-center gap-2 px-4 py-2 bg-[#FAFAF8] border border-[#E8E8E6] text-xs font-semibold text-[#171717] uppercase tracking-wider hover:bg-[#171717] hover:text-white transition-all self-start md:self-auto"
                 >
                   <span>Featured Case Study</span>
@@ -133,10 +143,19 @@ export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onNavigate }) => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {workflowStages.map((stage) => (
-            <div key={stage.num} className="p-6 bg-white border border-[#E8E8E6] space-y-3">
-              <div className="text-2xl font-mono font-bold text-[#171717]">{stage.num}</div>
-              <h3 className="font-bold text-[#171717] text-base">{stage.title}</h3>
-              <p className="text-xs text-[#525252] leading-relaxed">{stage.desc}</p>
+            <div
+              key={stage.num}
+              className="p-6 bg-white border border-[#E8E8E6] space-y-3"
+            >
+              <div className="text-2xl font-mono font-bold text-[#171717]">
+                {stage.num}
+              </div>
+              <h3 className="font-bold text-[#171717] text-base">
+                {stage.title}
+              </h3>
+              <p className="text-xs text-[#525252] leading-relaxed">
+                {stage.desc}
+              </p>
             </div>
           ))}
         </div>
@@ -156,21 +175,31 @@ export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onNavigate }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="p-8 bg-white border border-[#E8E8E6] space-y-4">
             <blockquote className="text-sm md:text-base text-[#262624] italic leading-relaxed">
-              "Amir brings an extraordinary hybrid brain to production. He moves seamlessly from live-action camera directing on set to complex procedural Houdini simulations, always keeping the overarching narrative rhythm impeccably tight."
+              "Xaniar brings an extraordinary hybrid brain to production. He
+              moves seamlessly from live-action camera directing on set to
+              complex procedural Houdini simulations, always keeping the
+              overarching narrative rhythm impeccably tight."
             </blockquote>
             <div className="pt-2 border-t border-[#E8E8E6] text-xs">
               <div className="font-bold text-[#171717]">Elena Rostova</div>
-              <div className="text-[#737373]">Executive Creative Director · Stockholm Creative Group</div>
+              <div className="text-[#737373]">
+                Executive Creative Director · Stockholm Creative Group
+              </div>
             </div>
           </div>
 
           <div className="p-8 bg-white border border-[#E8E8E6] space-y-4">
             <blockquote className="text-sm md:text-base text-[#262624] italic leading-relaxed">
-              "Working with Amir on our global innovation campaign was flawless. He translated abstract biomechanical engineering data into pure cinematic poetry with kinetic typography that set a new benchmark for our brand."
+              "Working with Xaniar on our global innovation campaign was
+              flawless. He translated abstract biomechanical engineering data
+              into pure cinematic poetry with kinetic typography that set a new
+              benchmark for our brand."
             </blockquote>
             <div className="pt-2 border-t border-[#E8E8E6] text-xs">
               <div className="font-bold text-[#171717]">Julian H. Wright</div>
-              <div className="text-[#737373]">Global Brand VP · High-Performance Motion</div>
+              <div className="text-[#737373]">
+                Global Brand VP · High-Performance Motion
+              </div>
             </div>
           </div>
         </div>

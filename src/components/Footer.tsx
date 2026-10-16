@@ -31,7 +31,7 @@ export const Footer: React.FC<FooterProps> = ({
             {OWNER_INFO.name}
           </div>
           <div className="text-xs text-[#737373] tracking-wide">
-            © {new Date().getFullYear()} xaniar ghaderpanah. All Rights
+            © {new Date().getFullYear()} Xaniar Ghaderpanah. All Rights
             Reserved.
           </div>
         </div>

@@ -41,9 +41,9 @@ export const Navbar: React.FC<NavbarProps> = ({
           type="button"
           onClick={() => handleLinkClick("home")}
           className="text-lg md:text-xl font-bold tracking-tight uppercase whitespace-nowrap shrink-0 transition-opacity hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
-          aria-label="xaniar ghaderpanah home"
+          aria-label="Xaniar Ghaderpanah home"
         >
-          xaniar ghaderpanah
+          Xaniar Ghaderpanah
         </button>
 
         {/* Zone 2: Clean 4 nav links */}
@@ -153,7 +153,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               INITIATE INQUIRY
             </button>
             <div className="flex items-center justify-between text-xs text-[#737373] font-mono">
-              <span>MUNICH / REMOTE</span>
+              <span>BARCELONA / REMOTE</span>
               <span>CET (UTC+2)</span>
             </div>
           </div>

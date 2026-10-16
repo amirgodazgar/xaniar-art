@@ -25,31 +25,31 @@ export interface AwardItem {
 }
 
 export const OWNER_INFO = {
-  name: "xaniar ghaderpanah",
+  name: "Xaniar Ghaderpanah",
   title: "Creative Director & Motion Design Lead",
-  location: "Munich & Global Remote",
+  location: "BARCELONA & Global Remote",
   availability: "Available for Select Commissions & Directing Q3/Q4 2026",
-  email: "amir.godazgar@gmail.com",
+  email: "xaniarr.x@gmail.com",
   socials: [
     {
       label: "Vimeo",
       url: "https://vimeo.com",
-      handle: "vimeo.com/amirgodazgar",
+      handle: "vimeo.com/xaniar",
     },
     {
       label: "LinkedIn",
       url: "https://linkedin.com",
-      handle: "linkedin.com/in/amir-godazgar",
+      handle: "https://www.linkedin.com/in/xaniar-ghaderpanah-9b6798202/",
     },
     {
       label: "Instagram",
       url: "https://instagram.com",
-      handle: "@amir.motion",
+      handle: "@xaniar.motion",
     },
     {
       label: "Behance",
       url: "https://behance.net",
-      handle: "behance.net/amirgodazgar",
+      handle: "behance.net/xaniar",
     },
   ],
   bio: `Senior Creative Director, Commercial Director, and Motion Design Lead with over a decade of experience crafting high-impact brand films, 3D kinetic visuals, and immersive cinematics. Partnering with pioneering agencies, luxury brands, and global entertainment leaders to translate abstract concepts into visceral, precision-engineered audiovisual narratives.`,
@@ -237,10 +237,10 @@ export const PROJECTS: Project[] = [
     credits: [
       {
         role: "Commercial Director & Art Director",
-        name: "xaniar ghaderpanah",
+        name: "Xaniar Ghaderpanah",
       },
       { role: "Director of Photography", name: "Lukas Meier, BVK" },
-      { role: "Lead Houdini Simulation Artist", name: "xaniar ghaderpanah" },
+      { role: "Lead Houdini Simulation Artist", name: "Xaniar Ghaderpanah" },
       { role: "Original Sound Design & Mix", name: "Echolab London" },
       { role: "Colorist", name: "Sofie Lindqvist" },
     ],
@@ -299,7 +299,7 @@ export const PROJECTS: Project[] = [
       "Lumen Prize 3D/Interactive Shortlist",
     ],
     credits: [
-      { role: "Concept & 3D Motion Artist", name: "xaniar ghaderpanah" },
+      { role: "Concept & 3D Motion Artist", name: "Xaniar Ghaderpanah" },
       { role: "Acoustic Spatial Composer", name: "Valentin Roesch" },
       { role: "Curatorial Director", name: "Elena von Wartburg" },
     ],
@@ -354,7 +354,7 @@ export const PROJECTS: Project[] = [
       "D&AD Graphite Pencil — Motion Design",
     ],
     credits: [
-      { role: "Motion Design Lead & Art Director", name: "xaniar ghaderpanah" },
+      { role: "Motion Design Lead & Art Director", name: "Xaniar Ghaderpanah" },
       { role: "Senior Typography Designer", name: "Marcus Keller" },
       { role: "Executive Producer", name: "Chloe Vance" },
       { role: "Composer", name: "Raster-Noton Studio" },
@@ -398,11 +398,11 @@ export const PROJECTS: Project[] = [
     toolsUsed: ["Cinema 4D", "Redshift", "DaVinci Resolve Studio", "Sony FX9"],
     awards: ["iF Design Award — Audio Brand Communication"],
     credits: [
-      { role: "Director & Video Producer", name: "xaniar ghaderpanah" },
+      { role: "Director & Video Producer", name: "Xaniar Ghaderpanah" },
       { role: "Production Designer", name: "Kenji Takahashi" },
       {
         role: "Spatial Sound Designer",
-        name: "xaniar ghaderpanah & Kroma Labs",
+        name: "Xaniar Ghaderpanah & Kroma Labs",
       },
     ],
     stills: [
@@ -452,10 +452,10 @@ export const PROJECTS: Project[] = [
     credits: [
       {
         role: "Cinematic Artist & Technical Director",
-        name: "xaniar ghaderpanah",
+        name: "Xaniar Ghaderpanah",
       },
       { role: "Character Sculptor", name: "Taras Kovalenko" },
-      { role: "Environment Technical Artist", name: "xaniar ghaderpanah" },
+      { role: "Environment Technical Artist", name: "Xaniar Ghaderpanah" },
     ],
     stills: [
       { caption: "Orbital biosphere horizon breakdown frame", ratio: "16:9" },
@@ -496,7 +496,7 @@ export const PROJECTS: Project[] = [
     toolsUsed: ["Arricam LT 35mm", "Cinema 4D", "Flame", "DaVinci Resolve"],
     awards: ["Ciclope Festival — Best Cinematography Shortlist"],
     credits: [
-      { role: "Commercial Director", name: "xaniar ghaderpanah" },
+      { role: "Commercial Director", name: "Xaniar Ghaderpanah" },
       { role: "Creative Producer", name: "Astrid Lindau" },
       { role: "Cinematographer", name: "Jonas Almqvist" },
     ],
@@ -538,7 +538,7 @@ export const PROJECTS: Project[] = [
     toolsUsed: ["Cinema 4D", "Redshift", "Marvelous Designer", "Houdini"],
     awards: ["Grand Prix d’Horlogerie de Genève — Digital Craft Honor"],
     credits: [
-      { role: "3D Motion Lead & Art Director", name: "xaniar ghaderpanah" },
+      { role: "3D Motion Lead & Art Director", name: "Xaniar Ghaderpanah" },
       { role: "Mechanical Simulation Specialist", name: "Oliver Stern" },
     ],
     stills: [
@@ -584,9 +584,9 @@ export const PROJECTS: Project[] = [
       "Clermont-Ferrand Special Mention",
     ],
     credits: [
-      { role: "Director & Producer", name: "xaniar ghaderpanah" },
+      { role: "Director & Producer", name: "Xaniar Ghaderpanah" },
       { role: "Drone Photogrammetry Pilot", name: "Mathieu Blanc" },
-      { role: "Original Score", name: "xaniar ghaderpanah & S. Røed" },
+      { role: "Original Score", name: "Xaniar Ghaderpanah & S. Røed" },
     ],
     stills: [
       {
@@ -615,7 +615,7 @@ export const CLIENT_ROSTER: ClientItem[] = [
     industry: "Haute Horlogerie",
     region: "Switzerland",
   },
-  { name: "Rimowa", industry: "Luxury Goods", region: "Germany" },
+  { name: "Rimowa", industry: "Luxury Goods", region: "Spain" },
   {
     name: "Museum of Digital Art",
     industry: "Contemporary Arts",
@@ -624,7 +624,7 @@ export const CLIENT_ROSTER: ClientItem[] = [
   {
     name: "Kroma Sound Lab",
     industry: "Spatial Audio Systems",
-    region: "Germany",
+    region: "Spain",
   },
   {
     name: "Bang & Olufsen",
@@ -689,16 +689,16 @@ export const AWARDS_LIST: AwardItem[] = [
 
 export const PRODUCTION_FAQ = [
   {
-    q: "What scale of projects does Amir direct and produce?",
+    q: "What scale of projects does Xaniar direct and produce?",
     a: "Engagements range from global commercial broadcast campaigns (live-action + 3D VFX) to bespoke experiential museum installations, interactive brand design systems, and real-time cinematics. I can step in as sole Commercial Director, Motion Design Lead, or spearhead turnkey end-to-end productions with trusted partner specialists.",
   },
   {
-    q: "How does Amir collaborate with external agencies or in-house brand teams?",
+    q: "How does Xaniar collaborate with external agencies or in-house brand teams?",
     a: "Every collaboration is structured to reduce friction. Early stages focus on creative treatment decks, styleframes, and technical R&D. During production, agile check-ins (Frame.io, live review sessions) provide complete transparency into camera passes, shader development, and editorial rhythms.",
   },
   {
-    q: "Can Amir work on-location for commercial shoots?",
-    a: "Yes. Based out of Munich with an EU passport and global mobility, directing on-location across Europe, North America, and Asia. Studio post-production and 3D simulation pipelines run seamlessly in remote high-throughput environments.",
+    q: "Can Xaniar work on-location for commercial shoots?",
+    a: "Yes. Based out of BARCELONA with an EU passport and global mobility, directing on-location across Europe, North America, and Asia. Studio post-production and 3D simulation pipelines run seamlessly in remote high-throughput environments.",
   },
   {
     q: "What is the standard lead time for booking?",
