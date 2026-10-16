@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  --color-canvas: #FAFAF8;
+  --color-surface: #FFFFFF;
+  --color-charcoal: #171717;
+  --color-muted: #737373;
+  --color-hairline: #E8E8E6;
+  --color-cinema: #141414;
+  --color-cinema-surface: #1C1C1A;
+  --color-cinema-light: #FAFAFA;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  background-color: #FAFAF8;
+  color: #171717;
+}
+
+/* Custom scrollbar for minimal aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAFAF8;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4D4D2;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A3A3A0;
+}
+
+/* Fluid typography and aspect utilities */
+.cinema-aspect {
+  aspect-ratio: 2.39 / 1;
+}
+
+.standard-aspect {
+  aspect-ratio: 16 / 9;
+}
