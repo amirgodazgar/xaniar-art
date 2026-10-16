@@ -83,7 +83,7 @@ Senior Creative Director and Motion Design Lead with 11+ years directing live-ac
             PROFILE // ME
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#171717]">
-            About Xaniar Ghaderpanah
+            About Xaniar
           </h1>
         </div>
 
