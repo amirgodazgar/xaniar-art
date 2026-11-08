@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 
-export type PageRoute = 'home' | 'work' | 'about' | 'expertise' | 'contact' | 'project';
+export type PageRoute = '/' | '/work'  | '/expertise' | '/contact' | '/project';
 
 export interface RouteState {
   page: PageRoute;
@@ -42,19 +42,19 @@ function parseCurrentRoute(): RouteState {
 export function useRouter() {
   const [route, setRoute] = useState<RouteState>(() => parseCurrentRoute());
 
-  useEffect(() => {
-    const handlePopState = () => {
-      setRoute(parseCurrentRoute());
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
+  // useEffect(() => {
+  //   const handlePopState = () => {
+  //     setRoute(parseCurrentRoute());
+  //     window.scrollTo({ top: 0, behavior: 'smooth' });
+  //   };
 
-    window.addEventListener('popstate', handlePopState);
-    window.addEventListener('hashchange', handlePopState);
-    return () => {
-      window.removeEventListener('popstate', handlePopState);
-      window.removeEventListener('hashchange', handlePopState);
-    };
-  }, []);
+  //   window.addEventListener('popstate', handlePopState);
+  //   window.addEventListener('hashchange', handlePopState);
+  //   return () => {
+  //     window.removeEventListener('popstate', handlePopState);
+  //     window.removeEventListener('hashchange', handlePopState);
+  //   };
+  // }, []);
 
   const navigate = useCallback((page: PageRoute, slug: string | null = null) => {
     let newHash = '';

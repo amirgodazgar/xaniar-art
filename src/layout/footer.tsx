@@ -1,17 +1,14 @@
-import React from "react";
-import { OWNER_INFO } from "../data/portfolioData";
 import { ArrowUp, ExternalLink } from "lucide-react";
-import { PageRoute } from "../utils/router";
+import React from "react";
+import { useNavigate } from "react-router";
+import { OWNER_INFO } from "../data/portfolioData";
 
 interface FooterProps {
-  onNavigate?: (page: PageRoute, slug?: string | null) => void;
   isDarkTheme?: boolean;
 }
 
-export const Footer: React.FC<FooterProps> = ({
-  onNavigate,
-  isDarkTheme = false,
-}) => {
+export const Footer: React.FC<FooterProps> = ({ isDarkTheme = false }) => {
+  let navigate = useNavigate();
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -46,20 +43,20 @@ export const Footer: React.FC<FooterProps> = ({
               rel="noreferrer noopener"
               className={`flex items-center gap-1 transition-colors ${
                 isDarkTheme
-                  ? "text-[#A3A3A0] hover:text-[#FAFAFA]"
-                  : "text-[#737373] hover:text-[#171717]"
+                  ? "text-[#A3A3A0] hover:text-cinema-light"
+                  : "text-muted hover:text-charcoal"
               }`}
             >
               <span>{social.label}</span>
               <ExternalLink className="w-3 h-3 opacity-60" />
             </a>
           ))}
-          {onNavigate && (
+          {navigate && (
             <button
               type="button"
-              onClick={() => onNavigate("contact")}
+              onClick={() => navigate("contact")}
               className={`transition-colors underline underline-offset-4 ${
-                isDarkTheme ? "text-[#FAFAFA]" : "text-[#171717]"
+                isDarkTheme ? "text-cinema-light" : "text-charcoal"
               }`}
             >
               Direct Inquiry
@@ -73,8 +70,8 @@ export const Footer: React.FC<FooterProps> = ({
           onClick={scrollToTop}
           className={`group flex items-center gap-2 text-xs font-mono uppercase tracking-widest transition-colors ${
             isDarkTheme
-              ? "text-[#A3A3A0] hover:text-[#FAFAFA]"
-              : "text-[#737373] hover:text-[#171717]"
+              ? "text-[#A3A3A0] hover:text-cinema-light"
+              : "text-muted hover:text-charcoal"
           }`}
           aria-label="Back to top"
         >

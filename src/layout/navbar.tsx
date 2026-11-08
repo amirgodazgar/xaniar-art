@@ -1,29 +1,27 @@
 import React, { useState } from "react";
 import { PageRoute } from "../utils/router";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import { useLocation, useNavigate } from "react-router";
 
 interface NavbarProps {
-  currentPage: PageRoute;
-  onNavigate: (page: PageRoute, slug?: string | null) => void;
   isDarkTheme?: boolean;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({
-  currentPage,
-  onNavigate,
-  isDarkTheme = false,
-}) => {
+export const Navbar: React.FC<NavbarProps> = ({ isDarkTheme = false }) => {
+  let navigate = useNavigate();
+  let location = useLocation();
+  let currentPage = location.pathname;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks: { label: string; page: PageRoute }[] = [
-    { label: "WORK", page: "work" },
-    { label: "ABOUT", page: "about" },
-    { label: "EXPERTISE", page: "expertise" },
-    { label: "CONTACT", page: "contact" },
+    { label: "ME", page: "/" },
+    { label: "WORK", page: "/work" },
+    { label: "EXPERTISE", page: "/expertise" },
+    { label: "CONTACT", page: "/contact" },
   ];
 
   const handleLinkClick = (page: PageRoute) => {
-    onNavigate(page);
+    navigate(page);
     setMobileMenuOpen(false);
   };
 
@@ -39,7 +37,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Zone 1: Brand Title (Wordmark in display face, single element, no subtext) */}
         <button
           type="button"
-          onClick={() => handleLinkClick("home")}
+          onClick={() => handleLinkClick("/")}
           className="text-lg md:text-xl font-bold tracking-tight uppercase whitespace-nowrap shrink-0 transition-opacity hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
           aria-label="Xaniar Ghaderpanah home"
         >
@@ -61,11 +59,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                 className={`py-2 whitespace-nowrap shrink-0 transition-colors border-b-2 text-xs tracking-widest ${
                   isActive
                     ? isDarkTheme
-                      ? "text-[#FAFAFA] border-[#FAFAFA]"
-                      : "text-[#171717] border-[#171717]"
+                      ? "text-cinema-light border-cinema-light"
+                      : "text-charcoal border-charcoal"
                     : isDarkTheme
-                      ? "text-[#A3A3A0] border-transparent hover:text-[#FAFAFA]"
-                      : "text-[#737373] border-transparent hover:text-[#171717]"
+                      ? "text-[#A3A3A0] border-transparent hover:text-cinema-light"
+                      : "text-muted border-transparent hover:text-charcoal"
                 }`}
                 aria-current={isActive ? "page" : undefined}
               >
@@ -79,11 +77,11 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="hidden md:flex items-center gap-4 shrink-0">
           <button
             type="button"
-            onClick={() => handleLinkClick("contact")}
+            onClick={() => handleLinkClick("/contact")}
             className={`px-4 py-2.5 text-xs font-semibold tracking-wider uppercase transition-all duration-150 whitespace-nowrap shrink-0 flex items-center gap-1.5 ${
               isDarkTheme
-                ? "bg-[#FAFAFA] text-[#141414] hover:bg-[#EAEAEA] active:scale-98"
-                : "bg-[#171717] text-[#FAFAF8] hover:bg-[#2B2B28] active:scale-98"
+                ? "bg-cinema-light text-cinema hover:bg-[#EAEAEA] active:scale-98"
+                : "bg-charcoal text-canvas hover:bg-[#2B2B28] active:scale-98"
             }`}
           >
             <span>GET IN TOUCH</span>
@@ -147,7 +145,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="pt-8 border-t border-[#E8E8E6] dark:border-[#262624] space-y-4">
             <button
               type="button"
-              onClick={() => handleLinkClick("contact")}
+              onClick={() => handleLinkClick("/contact")}
               className="w-full py-4 text-center text-xs font-semibold tracking-widest uppercase bg-[#171717] text-[#FAFAF8] dark:bg-[#FAFAFA] dark:text-[#141414]"
             >
               INITIATE INQUIRY

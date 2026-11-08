@@ -14,12 +14,10 @@ import {
   Check,
   ExternalLink,
 } from "lucide-react";
+import { useNavigate } from "react-router";
 
-interface AboutPageProps {
-  onNavigate: (page: PageRoute, slug?: string | null) => void;
-}
-
-export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
+export const AboutPage = () => {
+  let navigate = useNavigate();
   const [downloadSuccess, setDownloadSuccess] = useState(false);
 
   const handleDownloadCV = () => {
@@ -78,11 +76,11 @@ Senior Creative Director and Motion Design Lead with 11+ years directing live-ac
     <div className="space-y-20 md:space-y-28 py-12 md:py-16">
       {/* 1. Header & Lead Editorial Portrait Statement */}
       <section className="max-w-7xl mx-auto px-6 space-y-12">
-        <div className="border-b border-[#E8E8E6] pb-8">
-          <div className="text-xs font-mono tracking-widest text-[#737373] uppercase mb-2">
+        <div className="border-b border-hairline pb-8">
+          <div className="text-xs font-mono tracking-widest text-muted uppercase mb-2">
             PROFILE // ME
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#171717]">
+          <h1 className="text-4xl sm:text-5xl md:text-5xl font-bold tracking-tight text-charcoal">
             About Xaniar
           </h1>
         </div>
@@ -90,7 +88,7 @@ Senior Creative Director and Motion Design Lead with 11+ years directing live-ac
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Column: Portrait & Stats (4 cols) */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-[#141414] text-[#FAFAFA] aspect-square flex flex-col justify-between p-8 border border-[#262624] relative overflow-hidden">
+            <div className="bg-cinema text-cinema-light aspect-square flex flex-col justify-between p-8 border border-[#262624] relative overflow-hidden">
               <div className="font-mono text-xs text-[#A3A3A0] uppercase tracking-widest">
                 DIRECTOR & ARTIST
               </div>
@@ -100,16 +98,15 @@ Senior Creative Director and Motion Design Lead with 11+ years directing live-ac
                   {/* <span className="font-bold text-3xl font-mono text-[#FAFAFA]"> */}
                   <img
                     className="h-full w-full rounded-full"
-                    src="https://media.licdn.com/dms/image/v2/D4D03AQFLFXNHG6OCLA/profile-displayphoto-scale_400_400/B4DZfkIJ1iH4As-/0/1751879032682?e=1793836800&v=beta&t=vHp8-OqNXoKGxdqqNorNvKLUHH7Kcaa-zu68h7pD9eQ"
+                    src="https://media.licdn.com/dms/image/v2/D4D03AQFLFXNHG6OCLA/profile-displayphoto-crop_800_800/B4DZfkIJ1iH4AU-/0/1751879032599?e=1795651200&v=beta&t=l8q0d70sPg8GUDIfo3MOljacyZuesSw2DTkqD3Pxt74"
                     alt="Xaniar"
                   />
-                  {/* </span> */}
                 </div>
-                <div className="text-base font-bold font-mono text-[#A3A3A0]">
+                <div className="text-lg font-bold font-mono text-[#A3A3A0]">
                   Xaniar Ghaderpanah
                 </div>
-                <div className="text-xs text-[#737373]">
-                  6+ YRS PRODUCTION LEAD
+                <div className="text-xs font-bold text-muted">
+                  10 YRS Creative Lead & Art Director
                 </div>
               </div>
               <div className="flex items-center justify-between text-xs font-mono text-[#A3A3A0] border-t border-[#262624] pt-4">
@@ -122,7 +119,7 @@ Senior Creative Director and Motion Design Lead with 11+ years directing live-ac
               <button
                 type="button"
                 onClick={handleDownloadCV}
-                className="w-full py-3.5 px-4 bg-[#171717] text-[#FAFAF8] text-xs font-semibold tracking-wider uppercase flex items-center justify-center gap-2 transition-all hover:bg-[#2C2C29]"
+                className="w-full py-3.5 px-4 bg-charcoal text-canvas text-xs font-semibold tracking-wider uppercase flex items-center justify-center gap-2 transition-all hover:bg-[#2C2C29]"
               >
                 {downloadSuccess ? (
                   <>
@@ -138,8 +135,8 @@ Senior Creative Director and Motion Design Lead with 11+ years directing live-ac
               </button>
               <button
                 type="button"
-                onClick={() => onNavigate("contact")}
-                className="w-full py-3.5 px-4 border border-[#E8E8E6] text-[#171717] text-xs font-semibold tracking-wider uppercase hover:border-[#171717] bg-white transition-all text-center"
+                onClick={() => navigate("/contact")}
+                className="w-full py-3.5 px-4 border border-hairline text-charcoal text-xs font-semibold tracking-wider uppercase hover:border-charcoal bg-white transition-all text-center"
               >
                 CONTACT FOR DIRECTING
               </button>
@@ -149,37 +146,51 @@ Senior Creative Director and Motion Design Lead with 11+ years directing live-ac
           {/* Right Column: Bio & Philosophy (7 cols) */}
           <div className="lg:col-span-7 space-y-8">
             <div className="space-y-4">
-              <div className="text-xs font-mono tracking-widest text-[#737373] uppercase">
-                BIOGRAPHY
+              <div className="text-xs font-mono tracking-widest text-muted uppercase">
+                ABOUT ME
               </div>
-              <p className="text-xl md:text-2xl font-normal text-[#171717] leading-relaxed">
-                {OWNER_INFO.bio}
+              <p className="text-xl md:text-xl font-normal text-charcoal leading-relaxed">
+                {OWNER_INFO.professionalSummary}
+              </p>
+              <p className="text-xl md:text-xl font-normal text-charcoal leading-relaxed">
+                {OWNER_INFO.experienceAndExpertise}
+              </p>
+              <p className="text-xl md:text-xl font-normal text-charcoal leading-relaxed">
+                {OWNER_INFO.locationAndAvailability}
               </p>
             </div>
 
-            <div className="p-8 bg-white border border-[#E8E8E6] space-y-4">
-              <div className="text-xs font-mono tracking-widest text-[#737373] uppercase">
-                CREATIVE MANIFESTO
+            <div className="p-8 bg-white border border-hairline space-y-4">
+              <div className="text-xs font-mono tracking-widest text-muted uppercase">
+                MANIFESTO
               </div>
-              <blockquote className="text-base md:text-lg text-[#262624] italic leading-relaxed">
-                "{OWNER_INFO.manifesto}"
-              </blockquote>
+              <div className="text-base md:text-lg text-[#262624] leading-relaxed">
+                <p className="mb-4">{OWNER_INFO.valueProposition}</p>
+                <p className="mb-4">{OWNER_INFO.expertiseOverview}</p>
+                <ul>
+                  {OWNER_INFO.areasOfExpertise.map((i) => (
+                    <li className="flex justify-start items-center">
+                      <span className="mr-3">&#x2022;</span> {i}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
-            <div className="space-y-4 pt-4 border-t border-[#E8E8E6]">
-              <div className="text-xs font-mono tracking-widest text-[#737373] uppercase">
+            <div className="space-y-4 pt-4 border-t border-hairline">
+              <div className="text-xs font-mono tracking-widest text-muted uppercase">
                 CORE LEADERSHIP ROLES
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
                 {DISCIPLINES.map((d, i) => (
                   <div
                     key={d.id}
-                    className="p-3 bg-white border border-[#E8E8E6] flex items-center gap-2"
+                    className="p-3 bg-white border border-hairline flex items-center gap-2"
                   >
-                    <span className="font-mono text-xs text-[#737373]">
+                    <span className="font-mono text-xs text-muted">
                       0{i + 1}
                     </span>
-                    <span className="font-semibold text-[#171717]">
+                    <span className="font-semibold text-charcoal">
                       {d.title}
                     </span>
                   </div>
@@ -192,38 +203,36 @@ Senior Creative Director and Motion Design Lead with 11+ years directing live-ac
 
       {/* 2. Full International Awards Archive */}
       <section className="max-w-7xl mx-auto px-6 space-y-8">
-        <div className="border-b border-[#E8E8E6] pb-6 flex items-center justify-between">
+        <div className="border-b border-hairline pb-6 flex items-center justify-between">
           <div>
-            <div className="text-xs font-mono tracking-widest text-[#737373] uppercase mb-2">
+            <div className="text-xs font-mono tracking-widest text-muted uppercase mb-2">
               JURIED RECOGNITION // 2023–2025
             </div>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-[#171717]">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-charcoal">
               Awards & Honors
             </h2>
           </div>
-          <div className="text-xs font-mono text-[#737373]">
-            14 GLOBAL HONORS
-          </div>
+          <div className="text-xs font-mono text-muted">14 GLOBAL HONORS</div>
         </div>
 
-        <div className="bg-white border border-[#E8E8E6] divide-y divide-[#E8E8E6]">
+        <div className="bg-white border border-hairline divide-y divide-hairline">
           {AWARDS_LIST.map((award, idx) => (
             <div
               key={idx}
-              className="p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-[#FAFAF8] transition-colors"
+              className="p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-canvas transition-colors"
             >
               <div className="space-y-1">
-                <div className="flex items-center gap-2 text-xs font-mono text-[#737373]">
+                <div className="flex items-center gap-2 text-xs font-mono text-muted">
                   <span>{award.organization}</span>
                   <span aria-hidden="true">·</span>
                   <span>{award.year}</span>
                 </div>
-                <div className="text-lg md:text-xl font-bold text-[#171717]">
+                <div className="text-lg md:text-xl font-bold text-charcoal">
                   {award.title}
                 </div>
                 <div className="text-xs text-[#525252]">
                   Project:{" "}
-                  <span className="font-semibold text-[#171717]">
+                  <span className="font-semibold text-charcoal">
                     {award.project}
                   </span>
                 </div>

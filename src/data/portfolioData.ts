@@ -52,9 +52,27 @@ export const OWNER_INFO = {
       handle: "behance.net/xaniar",
     },
   ],
-  bio: `Senior Creative Director, Commercial Director, and Motion Design Lead with over a decade of experience crafting high-impact brand films, 3D kinetic visuals, and immersive cinematics. Partnering with pioneering agencies, luxury brands, and global entertainment leaders to translate abstract concepts into visceral, precision-engineered audiovisual narratives.`,
-  manifesto: `Visual narrative should feel tactile, rhythmic, and inevitable. Whether directing an anamorphic commercial or sculpting a procedural 3D world in Houdini and Unreal Engine, the goal remains singular: eliminate decorative noise and let the weight, tension, and tempo of light and motion communicate truth.`,
-  yearsOfExperience: 11,
+
+  professionalSummary: `Creative and multidisciplinary design professional with 10 years of experience in the design industry, specializing in creative direction, art direction, video production, and visual storytelling.`,
+  experienceAndExpertise:
+    "Experienced in leading creative teams, developing visual concepts, directing video projects, and overseeing the entire production process from initial ideation to final delivery. Combining a strong background in graphic design and motion design with hands-on experience in video production, 3D animation, and visual content creation.",
+  locationAndAvailability:
+    "Currently based in Barcelona, Spain, and open to new creative opportunities in international environments.",
+
+  valueProposition:
+    "I help brands and creative teams transform ideas into compelling visual experiences through creative direction, art direction, and multimedia production.",
+  expertiseOverview:
+    "From developing creative concepts and building visual identities to leading design teams, directing video productions, and creating engaging 2D and 3D content, I bring ideas to life through strategic thinking and creative execution.",
+  areasOfExpertise: [
+    "Creative Direction & Art Direction",
+    "Brand Identity & Visual Communication",
+    "Creative Campaigns & Concept Development",
+    "Video Production & Directing",
+    "Motion Design & 2D/3D Animation",
+    "Design Team Leadership",
+    "Visual Storytelling & Content Creation",
+  ],
+  yearsOfExperience: 10,
   completedProjects: 84,
   internationalAwards: 14,
 };
