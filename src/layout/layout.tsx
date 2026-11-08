@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from "react-router";
-import { Navbar } from "./Navbar";
-import { Footer } from "./Footer";
+import { Navbar } from "./navbar";
+import { Footer } from "./footer";
 
 export default function Layout() {
   const location = useLocation();
