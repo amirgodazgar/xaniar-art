@@ -1,21 +1,18 @@
-import React, { useState } from "react";
-import { OWNER_INFO, PRODUCTION_FAQ } from "../data/portfolioData";
 import {
-  validateContactForm,
+  Calendar,
+  CheckCircle2,
+  Clock,
+  Copy,
+  MapPin,
+  Send,
+} from "lucide-react";
+import React, { useState } from "react";
+import { OWNER_INFO } from "../data/portfolioData";
+import {
   ContactFormData,
   FormErrors,
+  validateContactForm,
 } from "../utils/portfolio";
-import {
-  Copy,
-  CheckCircle2,
-  ChevronDown,
-  ChevronUp,
-  Mail,
-  Send,
-  MapPin,
-  Calendar,
-  Clock,
-} from "lucide-react";
 
 export const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -32,7 +29,6 @@ export const ContactPage: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [copiedEmail, setCopiedEmail] = useState<boolean>(false);
-  const [expandedFaq, setExpandedFaq] = useState<number | null>(0);
 
   const handleCopyEmail = () => {
     if (typeof window !== "undefined") {
@@ -418,39 +414,6 @@ export const ContactPage: React.FC = () => {
                 </button>
               </form>
             )}
-          </div>
-        </div>
-
-        {/* FAQ Accordion */}
-        <div className="border-t border-[#262624] pt-16 space-y-8">
-          <div className="text-xs font-mono tracking-widest text-[#A3A3A0] uppercase">
-            COLLABORATION PROTOCOL // FREQUENTLY ASKED QUESTIONS
-          </div>
-          <div className="divide-y divide-[#262624] border-y border-[#262624]">
-            {PRODUCTION_FAQ.map((faq, idx) => {
-              const isOpen = expandedFaq === idx;
-              return (
-                <div key={idx} className="py-6">
-                  <button
-                    type="button"
-                    onClick={() => setExpandedFaq(isOpen ? null : idx)}
-                    className="w-full flex items-center justify-between text-left text-base md:text-lg font-bold text-[#FAFAFA] hover:text-[#A3A3A0] transition-colors"
-                  >
-                    <span>{faq.q}</span>
-                    {isOpen ? (
-                      <ChevronUp className="w-5 h-5 shrink-0" />
-                    ) : (
-                      <ChevronDown className="w-5 h-5 shrink-0" />
-                    )}
-                  </button>
-                  {isOpen && (
-                    <p className="mt-4 text-xs md:text-sm text-[#A3A3A0] leading-relaxed max-w-3xl">
-                      {faq.a}
-                    </p>
-                  )}
-                </div>
-              );
-            })}
           </div>
         </div>
       </div>

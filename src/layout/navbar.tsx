@@ -16,7 +16,6 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkTheme = false }) => {
   const navLinks: { label: string; page: PageRoute }[] = [
     { label: "ME", page: "/" },
     { label: "WORK", page: "/work" },
-    { label: "EXPERTISE", page: "/expertise" },
     { label: "CONTACT", page: "/contact" },
   ];
 

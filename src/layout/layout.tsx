@@ -17,18 +17,6 @@ export default function Layout() {
       <Navbar isDarkTheme={isContactPage} />
       <main className="flex-1">
         <Outlet />
-        {/* {page === 'home' && <HomePage onNavigate={navigate} />}
-        {page === "home" && <AboutPage onNavigate={navigate} />}
-        {page === "work" && <WorkPage onNavigate={navigate} />}
-        {page === "project" && (
-          <ProjectDetailPage
-            slug={projectSlug || "polestar-aerolight"}
-            onNavigate={navigate}
-          />
-        )}
-        {page === "about" && <AboutPage onNavigate={navigate} />}
-        {page === "expertise" && <ExpertisePage onNavigate={navigate} />}
-        {page === "contact" && <ContactPage />} */}
       </main>
       <Footer isDarkTheme={isContactPage} />
     </div>

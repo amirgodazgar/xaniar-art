@@ -1,25 +1,22 @@
-import React, { useState, useMemo } from 'react';
-import { PROJECTS } from '../data/portfolioData';
-import { filterProjects } from '../utils/portfolio';
-import { ProjectCard } from '../components/ProjectCard';
-import { PageRoute } from '../utils/router';
-import { Search, LayoutGrid, List, ArrowUpRight, X } from 'lucide-react';
+import { ArrowUpRight, LayoutGrid, List, Search, X } from "lucide-react";
+import React, { useMemo, useState } from "react";
+import { useNavigate } from "react-router";
+import { ProjectCard } from "../components/ProjectCard";
+import { PROJECTS } from "../data/portfolioData";
+import { filterProjects } from "../utils/portfolio";
 
-interface WorkPageProps {
-  onNavigate: (page: PageRoute, slug?: string | null) => void;
-}
-
-export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [searchQuery, setSearchQuery] = useState<string>('');
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+export const WorkPage: React.FC = () => {
+  let navigate = useNavigate();
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
   const categories = [
-    { id: 'all', label: 'All Works' },
-    { id: 'commercial', label: 'Commercials' },
-    { id: '3d-motion', label: '3D Motion' },
-    { id: 'brand-film', label: 'Brand Films' },
-    { id: 'cinematics', label: 'Cinematics' },
+    { id: "all", label: "All Works" },
+    { id: "commercial", label: "Commercials" },
+    { id: "3d-motion", label: "3D Motion" },
+    { id: "brand-film", label: "Brand Films" },
+    { id: "cinematics", label: "Cinematics" },
   ];
 
   const filteredProjects = useMemo(() => {
@@ -28,7 +25,10 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
 
   // Aggregate stats
   const totalDurationMinutes = useMemo(() => {
-    const totalSecs = filteredProjects.reduce((acc, p) => acc + p.durationSeconds, 0);
+    const totalSecs = filteredProjects.reduce(
+      (acc, p) => acc + p.durationSeconds,
+      0,
+    );
     return Math.round(totalSecs / 60);
   }, [filteredProjects]);
 
@@ -64,8 +64,8 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
                 onClick={() => setSelectedCategory(cat.id)}
                 className={`px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap shrink-0 ${
                   isActive
-                    ? 'bg-[#171717] text-[#FAFAF8]'
-                    : 'text-[#737373] hover:text-[#171717] hover:bg-[#FAFAF8]'
+                    ? "bg-[#171717] text-[#FAFAF8]"
+                    : "text-[#737373] hover:text-[#171717] hover:bg-[#FAFAF8]"
                 }`}
               >
                 {cat.label}
@@ -88,7 +88,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
             {searchQuery && (
               <button
                 type="button"
-                onClick={() => setSearchQuery('')}
+                onClick={() => setSearchQuery("")}
                 className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#737373] hover:text-[#171717]"
                 aria-label="Clear search"
               >
@@ -100,9 +100,11 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
           <div className="flex items-center border border-[#E8E8E6] bg-white p-0.5">
             <button
               type="button"
-              onClick={() => setViewMode('grid')}
+              onClick={() => setViewMode("grid")}
               className={`p-2 transition-colors ${
-                viewMode === 'grid' ? 'bg-[#171717] text-white' : 'text-[#737373] hover:text-[#171717]'
+                viewMode === "grid"
+                  ? "bg-[#171717] text-white"
+                  : "text-[#737373] hover:text-[#171717]"
               }`}
               aria-label="Grid view"
             >
@@ -110,9 +112,11 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
             </button>
             <button
               type="button"
-              onClick={() => setViewMode('list')}
+              onClick={() => setViewMode("list")}
               className={`p-2 transition-colors ${
-                viewMode === 'list' ? 'bg-[#171717] text-white' : 'text-[#737373] hover:text-[#171717]'
+                viewMode === "list"
+                  ? "bg-[#171717] text-white"
+                  : "text-[#737373] hover:text-[#171717]"
               }`}
               aria-label="List view"
             >
@@ -125,26 +129,36 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
       {/* Main Works Presentation */}
       {filteredProjects.length === 0 ? (
         <div className="py-24 text-center border border-dashed border-[#E8E8E6] space-y-4">
-          <div className="text-lg font-bold text-[#171717]">No projects match your filter criteria.</div>
-          <p className="text-xs text-[#737373]">Try clearing search keywords or selecting all categories.</p>
+          <div className="text-lg font-bold text-[#171717]">
+            No projects match your filter criteria.
+          </div>
+          <p className="text-xs text-[#737373]">
+            Try clearing search keywords or selecting all categories.
+          </p>
           <button
             type="button"
             onClick={() => {
-              setSelectedCategory('all');
-              setSearchQuery('');
+              setSelectedCategory("all");
+              setSearchQuery("");
             }}
             className="px-4 py-2 bg-[#171717] text-white text-xs font-semibold tracking-wider uppercase mt-2"
           >
             Reset Filters
           </button>
         </div>
-      ) : viewMode === 'grid' ? (
+      ) : viewMode === "grid" ? (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
           {filteredProjects.map((project) => (
             <ProjectCard
               key={project.id}
               project={project}
-              onSelect={(slug) => onNavigate('project', slug)}
+              onSelect={(slug) =>
+                navigate("/project", {
+                  state: {
+                    slug,
+                  },
+                })
+              }
             />
           ))}
         </div>
@@ -154,7 +168,13 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              onClick={() => onNavigate('project', project.slug)}
+              onClick={() =>
+                navigate("/project", {
+                  state: {
+                    slug: project.slug,
+                  },
+                })
+              }
               className="group p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-[#FAFAF8] cursor-pointer transition-colors"
             >
               <div className="space-y-1 max-w-xl">
@@ -175,8 +195,12 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
 
               <div className="flex items-center justify-between md:justify-end gap-6 md:gap-12 shrink-0">
                 <div className="text-left md:text-right">
-                  <div className="text-xs font-semibold text-[#171717]">{project.categoryLabel}</div>
-                  <div className="text-xs text-[#737373] mt-0.5 font-mono">{project.duration}</div>
+                  <div className="text-xs font-semibold text-[#171717]">
+                    {project.categoryLabel}
+                  </div>
+                  <div className="text-xs text-[#737373] mt-0.5 font-mono">
+                    {project.duration}
+                  </div>
                 </div>
                 <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-[#171717] uppercase group-hover:underline">
                   <span>CASE STUDY</span>

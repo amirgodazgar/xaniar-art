@@ -1,20 +1,7 @@
-import React, { useState } from "react";
-import {
-  OWNER_INFO,
-  AWARDS_LIST,
-  CLIENT_ROSTER,
-  DISCIPLINES,
-} from "../data/portfolioData";
-import { PageRoute } from "../utils/router";
-import {
-  Download,
-  ArrowUpRight,
-  Award,
-  Film,
-  Check,
-  ExternalLink,
-} from "lucide-react";
+import { Check, Download } from "lucide-react";
+import { useState } from "react";
 import { useNavigate } from "react-router";
+import { OWNER_INFO } from "../data/portfolioData";
 
 export const AboutPage = () => {
   let navigate = useNavigate();
@@ -176,123 +163,6 @@ Senior Creative Director and Motion Design Lead with 11+ years directing live-ac
                 </ul>
               </div>
             </div>
-
-            <div className="space-y-4 pt-4 border-t border-hairline">
-              <div className="text-xs font-mono tracking-widest text-muted uppercase">
-                CORE LEADERSHIP ROLES
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-                {DISCIPLINES.map((d, i) => (
-                  <div
-                    key={d.id}
-                    className="p-3 bg-white border border-hairline flex items-center gap-2"
-                  >
-                    <span className="font-mono text-xs text-muted">
-                      0{i + 1}
-                    </span>
-                    <span className="font-semibold text-charcoal">
-                      {d.title}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. Full International Awards Archive */}
-      <section className="max-w-7xl mx-auto px-6 space-y-8">
-        <div className="border-b border-hairline pb-6 flex items-center justify-between">
-          <div>
-            <div className="text-xs font-mono tracking-widest text-muted uppercase mb-2">
-              JURIED RECOGNITION // 2023–2025
-            </div>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-charcoal">
-              Awards & Honors
-            </h2>
-          </div>
-          <div className="text-xs font-mono text-muted">14 GLOBAL HONORS</div>
-        </div>
-
-        <div className="bg-white border border-hairline divide-y divide-hairline">
-          {AWARDS_LIST.map((award, idx) => (
-            <div
-              key={idx}
-              className="p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-canvas transition-colors"
-            >
-              <div className="space-y-1">
-                <div className="flex items-center gap-2 text-xs font-mono text-muted">
-                  <span>{award.organization}</span>
-                  <span aria-hidden="true">·</span>
-                  <span>{award.year}</span>
-                </div>
-                <div className="text-lg md:text-xl font-bold text-charcoal">
-                  {award.title}
-                </div>
-                <div className="text-xs text-[#525252]">
-                  Project:{" "}
-                  <span className="font-semibold text-charcoal">
-                    {award.project}
-                  </span>
-                </div>
-              </div>
-              <div className="font-mono text-xs uppercase px-3 py-1 bg-[#FAFAF8] border border-[#E8E8E6] text-[#737373] self-start md:self-auto">
-                {award.category}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 3. Studio Apparatus & Technical Pipeline */}
-      <section className="max-w-7xl mx-auto px-6 space-y-8">
-        <div className="border-b border-[#E8E8E6] pb-6">
-          <div className="text-xs font-mono tracking-widest text-[#737373] uppercase mb-2">
-            PRODUCTION INFRASTRUCTURE
-          </div>
-          <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-[#171717]">
-            Studio Apparatus & Technical Gear
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 bg-white border border-[#E8E8E6] space-y-3">
-            <div className="font-mono text-xs text-[#737373] uppercase">
-              CAMERA & OPTICS
-            </div>
-            <h3 className="font-bold text-[#171717]">Cinematography Systems</h3>
-            <p className="text-xs text-[#525252] leading-relaxed">
-              Arri Alexa Mini LF, Red V-Raptor 8K VV, vintage Kowa & Cooke
-              anamorphic prime sets, Preston wireless FIZ, DJI Ronin 2
-              stabilization.
-            </p>
-          </div>
-
-          <div className="p-6 bg-white border border-[#E8E8E6] space-y-3">
-            <div className="font-mono text-xs text-[#737373] uppercase">
-              COMPUTATIONAL 3D
-            </div>
-            <h3 className="font-bold text-[#171717]">
-              VFX Simulation Clusters
-            </h3>
-            <p className="text-xs text-[#525252] leading-relaxed">
-              Dual AMD Threadripper 64-Core nodes with 4x NVIDIA RTX 4090 GPUs.
-              Dedicated NVMe scratch arrays configured for high-density Houdini
-              fluid caches.
-            </p>
-          </div>
-
-          <div className="p-6 bg-white border border-[#E8E8E6] space-y-3">
-            <div className="font-mono text-xs text-[#737373] uppercase">
-              COLOR & FINISHING
-            </div>
-            <h3 className="font-bold text-[#171717]">Color-Critical Grading</h3>
-            <p className="text-xs text-[#525252] leading-relaxed">
-              DaVinci Resolve Advanced Panel, Flanders Scientific XMP310 HDR
-              Mastering Monitor (DCI-P3 / Rec.2020), calibrated ACEScc color
-              science pipeline.
-            </p>
           </div>
         </div>
       </section>
